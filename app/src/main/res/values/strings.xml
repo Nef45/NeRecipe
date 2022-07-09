@@ -64,4 +64,8 @@
     <string name="category_Russian">Russian</string>
     <string name="category_Mediterranean">Mediterranean</string>
     <string name="search_filter_hint">Search by recipe name</string>
+    <string name="error_empty_name">Enter the recipe name!</string>
+    <string name="error_empty_time">Enter cooking time!</string>
+    <string name="error_empty_ingredients">The recipe needs at least one ingredient!</string>
+    <string name="error_empty_steps">The recipe needs at least one step!</string>
 </resources>

@@ -208,12 +208,20 @@ class NewRecipeFragment : Fragment() {
                         }
                     } else if (newRecipeNameEditText.text.isNullOrBlank()) {
                         newRecipeNameEditText.requestFocus()
+                        newRecipeNameEditText.error =
+                            resources.getString(R.string.error_empty_name)
                     } else if (newRecipeTimeEditText.text.isNullOrBlank()) {
                         newRecipeTimeEditText.requestFocus()
+                        newRecipeTimeEditText.error =
+                            resources.getString(R.string.error_empty_time)
                     } else if (ingredients.isEmpty()) {
                         newRecipeIngredientsEditText.requestFocus()
+                        newRecipeIngredientsEditText.error =
+                            resources.getString(R.string.error_empty_ingredients)
                     } else if (steps.isEmpty()) {
                         newRecipeStepsEditText.requestFocus()
+                        newRecipeStepsEditText.error =
+                            resources.getString(R.string.error_empty_steps)
                     }
                 }
             }
@@ -240,7 +248,7 @@ class NewRecipeFragment : Fragment() {
     companion object {
         private const val DEFAULT_IMAGE_PATH =
             "android.resource://ru.netology.nerecipe/drawable/ic_launcher_foreground"
-        const val CALLER_NEW_RECIPE = "Caller: cewRecipe"
+        const val CALLER_NEW_RECIPE = "Caller: newRecipe"
     }
 }
 
@@ -266,6 +274,7 @@ private fun setTags(
         chipGroup.addView(chip)
     }
 }
+
 
 
 

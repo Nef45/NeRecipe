@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.RecipesFeedFragment">
+    tools:context=".ui.FaveRecipesFeedFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/faveRecipesRecyclerView"
@@ -17,22 +17,15 @@
         android:id="@+id/faveNewRecipeFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="?android:attr/actionBarSize"
         android:backgroundTint="@color/amber_500"
         android:contentDescription="@string/add_recipe_fb_recipes_feed"
-        app:layout_constraintBottom_toTopOf="@id/faveRecipeFeedBottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add_fb_24dp"
-        app:tint="@color/white" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/faveRecipeFeedBottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/recipe_feed_bottom_navigation_menu" />
+        app:srcCompat="@drawable/ic_add_fb_24dp"
+        app:tint="@color/white"
+        app:useCompatPadding="true" />
 
     <ImageView
         android:id="@+id/faveRecipeFeedPlaceholderNotFound"

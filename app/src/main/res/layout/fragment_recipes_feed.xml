@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/recipeFeedBottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recipesSearchView"
         tools:listitem="@layout/recipe_card" />
 
@@ -31,22 +31,15 @@
         android:id="@+id/newRecipeFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="?android:attr/actionBarSize"
         android:backgroundTint="@color/amber_500"
         android:contentDescription="@string/add_recipe_fb_recipes_feed"
-        app:layout_constraintBottom_toTopOf="@id/recipeFeedBottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add_fb_24dp"
-        app:tint="@color/white" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/recipeFeedBottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/recipe_feed_bottom_navigation_menu" />
+        app:srcCompat="@drawable/ic_add_fb_24dp"
+        app:tint="@color/white"
+        app:useCompatPadding="true" />
 
     <ImageView
         android:id="@+id/recipeFeedPlaceholderMain"

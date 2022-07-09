@@ -81,17 +81,6 @@ class RecipesFeedFragment : Fragment() {
 
                 setHasOptionsMenu(true)
 
-                val bottomBar = binding.recipeFeedBottomNavigationView
-                bottomBar.setOnItemSelectedListener { item ->
-                    when (item.itemId) {
-                        R.id.menu_navigate_favorite -> {
-                            viewModel.navigateToFaveRecipesScreenEvent.call()
-                            true
-                        }
-                        else -> false
-                    }
-                }
-
                 binding.newRecipeFab.setOnClickListener {
                     viewModel.onAddButtonClicked()
                 }

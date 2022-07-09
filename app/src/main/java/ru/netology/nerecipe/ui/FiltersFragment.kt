@@ -19,6 +19,7 @@ class FiltersFragment : Fragment() {
 
     private val viewModel by activityViewModels<RecipeViewModel>()
 
+    private lateinit var onBackPressedCallback: OnBackPressedCallback
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,16 +67,23 @@ class FiltersFragment : Fragment() {
                     viewModel.filterCheckboxUpdate.value = true
                 }
 
-                requireActivity().onBackPressedDispatcher.addCallback(object :
-                    OnBackPressedCallback(true) {
+                onBackPressedCallback = object : OnBackPressedCallback(true) {
                     override fun handleOnBackPressed() {
                         binding.resetFilterButton.performClick()
-                        viewModel.onApplyFiltersButtonClicked()
-                        findNavController().popBackStack()
+                        binding.applyFilterButton.performClick()
                     }
-                })
+                }
+                requireActivity().onBackPressedDispatcher.addCallback(
+                    onBackPressedCallback
+                )
 
             }.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        onBackPressedCallback.isEnabled = false
+        onBackPressedCallback.remove()
     }
 
     companion object {

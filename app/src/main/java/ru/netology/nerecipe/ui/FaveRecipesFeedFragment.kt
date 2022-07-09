@@ -52,17 +52,6 @@ class FaveRecipesFeedFragment : Fragment() {
         return FragmentRecipesFeedFavoritesBinding.inflate(layoutInflater, container, false)
             .also { binding ->
 
-                val bottomBar = binding.faveRecipeFeedBottomNavigationView
-                bottomBar.setOnItemSelectedListener { item ->
-                    when (item.itemId) {
-                        R.id.menu_navigate_all -> {
-                            viewModel.navigateToAllRecipesScreenEvent.call()
-                            true
-                        }
-                        else -> false
-                    }
-                }
-
                 binding.faveNewRecipeFab.setOnClickListener {
                     viewModel.onAddButtonClicked()
                 }

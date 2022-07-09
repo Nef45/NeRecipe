@@ -202,12 +202,20 @@ class EditRecipeFragment : Fragment() {
                         }
                     } else if (editRecipeNameEditText.text.isNullOrBlank()) {
                         editRecipeNameEditText.requestFocus()
+                        editRecipeNameEditText.error =
+                            resources.getString(R.string.error_empty_name)
                     } else if (editRecipeTimeEditText.text.isNullOrBlank()) {
                         editRecipeTimeEditText.requestFocus()
+                        editRecipeTimeEditText.error =
+                            resources.getString(R.string.error_empty_time)
                     } else if (ingredients.isEmpty()) {
                         editRecipeIngredientsEditText.requestFocus()
+                        editRecipeIngredientsEditText.error =
+                            resources.getString(R.string.error_empty_ingredients)
                     } else if (steps.isEmpty()) {
                         editRecipeStepsEditText.requestFocus()
+                        editRecipeStepsEditText.error =
+                            resources.getString(R.string.error_empty_steps)
                     }
                 }
             }
